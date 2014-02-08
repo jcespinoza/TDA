@@ -37,7 +37,7 @@ void test1(){
     cout << "\n\n\n";
     lista = 0;
 
-    PileP p(10);
+    PileP<int> p(10);
     p.insert(5);
     p.printList();
     p.insert(85);

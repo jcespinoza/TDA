@@ -6,7 +6,6 @@ CONFIG -= qt
 SOURCES += main.cpp \
     listArray.cpp \
     listPointer.cpp \
-    PileP.cpp \
     queuep.cpp
 
 HEADERS += \
