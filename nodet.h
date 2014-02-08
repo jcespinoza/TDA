@@ -1,12 +1,12 @@
 #ifndef NODET_H
 #define NODET_H
 
-template <class T>
+template <class Y>
 class NodeT
 {
 public:
-    T value;
-    NodeT<T>* next;
+    Y value;
+    NodeT<Y>* next;
 };
 
 #endif // NODET_H

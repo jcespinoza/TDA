@@ -4,7 +4,7 @@
 
 using namespace std;
 
-ListP::ListP(int size = 10) {
+ListP::ListP(int size = 10){
     this->size = size;
     count = 0;
     firstN = 0;
@@ -117,7 +117,7 @@ int ListP::remove(int pos){
         return 0;
     }else{
         Node* target = firstN;
-        Node* targPrev;
+        Node* targPrev = 0;
         
         for(int i = 0; i < pos; i++){
             targPrev = target;

@@ -7,8 +7,7 @@ SOURCES += main.cpp \
     listArray.cpp \
     listPointer.cpp \
     PileP.cpp \
-    queuep.cpp \
-    listpointert.cpp
+    queuep.cpp
 
 HEADERS += \
     listArray.h \
