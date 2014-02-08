@@ -12,8 +12,8 @@ QueueP::~QueueP(){
     
 }
 
-void QueueP::insert(int val) {
-    ListP::insert(getCount(),val);
+int QueueP::insert(int val) {
+    return ListP::insert(getCount(),val);
 }
 
 int QueueP::take(){

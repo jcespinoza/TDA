@@ -5,8 +5,8 @@ PileP::PileP(int size){
     setSize(size);
 }
 
-void PileP::insert(int value){
-    ListP::insert(getCount(), value);
+int PileP::insert(int value){
+    return ListP::insert(getCount(), value);
 }
 
 int PileP::take(){

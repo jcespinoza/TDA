@@ -11,7 +11,7 @@
 class QueueP: public ListP{
 public:
     QueueP(int);
-    void insert(int);
+    int insert(int);
     int take();
     ~QueueP();
 private:

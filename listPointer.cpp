@@ -12,6 +12,7 @@ ListP::ListP(int size) {
 }
 
 ListP::ListP() {
+    cout << "\nRan the parameterless one";
     size = 10;
     count = 0;
     firstN = 0;
@@ -39,7 +40,7 @@ int ListP::first(){
 }
 
 int ListP::insert(int pos, int val){
-    if(pos < 0 || pos > count || pos > size)
+    if(pos < 0 || pos > count || pos > getSize() || count == getSize())
         return -1;
     
         Node* n = new Node();
@@ -75,43 +76,6 @@ int ListP::insert(int pos, int val){
     }
 }
 
-/*
-int ListP::insert(int pos, int val){
-    if(pos < 0 || pos > count){
-        return -1;}
-    if(pos == 0){
-        Node* n = new Node();
-        n->value = val;
-        n->next = 0;
-        if(firstN != 0)
-            n->next = firstN->next;
-        firstN = n;
-        if(count == pos)
-            lastN = n;
-        count++;
-        return 0;
-    }
-    Node* cursor = firstN;
-    Node* cursorN = (firstN != 0)? firstN->next : 0;
-    for(int i = 0; i <= pos; i++){
-        if(cursor != 0){
-            if(i == pos){
-                Node* nuevo = new Node();
-                nuevo->value = val;
-                nuevo->next = cursor->next;
-                cursor->next = nuevo;
-                count++;
-                return 0;
-            }
-        }else
-            return -1;
-        cursor = cursorN;
-        cursorN = cursor->next;
-    }
-    return 0;
-}
-*/
-
 int ListP::printList(){
     Node* cursor = firstN;
     int i = 0;
@@ -134,6 +98,7 @@ int ListP::next(int pos){
 }
 
 int ListP::remove(int pos){
+    cout << "\nTrying to delete pos " << pos;
     if(pos < 0 || pos > count || pos > size)
         return -1;
     
@@ -172,6 +137,26 @@ int ListP::remove(int pos){
         count--;
         return 0;
     }
+}
+
+int ListP::purge(){
+    int p = 0;
+    int q;
+    while( p < count -1 ){
+        q = p + 1;
+        while(q <= count-1){
+            cout << "\ncomparing " << get(p) << " and " << get(q);
+            if(get(p) == get(q)){
+                cout << "\nThey were equal";
+                remove(q);
+            }else{
+                cout << "\nAdvancing q";
+                q++;
+            }
+        }
+        p++;
+    }
+    return 0;
 }
 
 int ListP::get(int pos){

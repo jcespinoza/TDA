@@ -13,7 +13,7 @@ class PileP: public ListP{
 public:
     PileP(int);
     ~PileP();
-    void insert(int);
+    int insert(int);
     int take();
 private:
     

@@ -10,7 +10,9 @@ ListAr::ListAr(int size) {
 }
 
 ListAr::~ListAr() {
-    delete elements;
+    if(elements != 0){
+        delete[] elements;
+    }
 }
 
 int ListAr::insert(int pos, int value){
@@ -51,6 +53,27 @@ int ListAr::next(int pos){
     if(pos >= count - 1 || pos < 0)
         return -1;
     return elements[pos + 1];
+}
+
+int ListAr::purge(){
+    cout << "\nPreparing to purge";
+    int p = 0;
+    int q;
+    while( p < count -1 ){
+        q = p + 1;
+        while(q <= count-1){
+            cout << "\ncomparing " << get(p) << " and " << get(q);
+            if(get(p) == get(q)){
+                cout << "\nThey were equal";
+                remove(q);
+            }else{
+                cout << "\nAdvancing q";
+                q++;
+            }
+        }
+        p++;
+    }
+    return 0;
 }
 
 int ListAr::remove(int pos){

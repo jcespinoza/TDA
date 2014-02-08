@@ -7,11 +7,7 @@
 
 #ifndef LISTPOINTER_H
 #define	LISTPOINTER_H
-class Node{
-public:
-    int value;
-    Node* next;
-};
+#include "node.h"
 
 class ListP{
 public:
