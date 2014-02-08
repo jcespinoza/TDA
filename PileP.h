@@ -24,6 +24,19 @@ public:
         return temp;
     }
 
+    int reverse(int iter = 0){
+        if(this->getCount() == 2){
+            this->swap(0,1);
+            return 0;
+        }
+
+        if( iter > this->getCount()/2)
+            return 0;
+
+        this->swap(0+iter, this->getCount()-1-iter);
+        return reverse(iter+1);
+    }
+
 private:
     
 };

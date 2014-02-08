@@ -56,6 +56,21 @@ public:
         }
     }
 
+    int swap(int i, int j){
+        if( i < 0 || j < 0 || i > count || j > count
+                || i > getSize() || j > getSize())
+            return -1;
+
+        if(i == j)
+            return 0;
+
+        T first =  get(i);
+        T second = get(j);
+        goTo(i)->value = second;
+        goTo(j)->value = first;
+        return 0;
+    }
+
     T first(){
         if(firstN != NULL)
             return firstN->value;
@@ -132,6 +147,7 @@ public:
     }
 
     int printList(){
+        cout << "\nLIST:";
         NodeT<T>* cursor = firstN;
         int i = 0;
         while(cursor != 0){

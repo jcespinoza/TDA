@@ -99,7 +99,7 @@ public:
     }
 
     ~ListAr(){
-        elements = nullptr;
+        elements = 0;
         delete elements;
     }
 };

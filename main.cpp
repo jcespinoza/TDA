@@ -14,7 +14,7 @@
 using namespace std;
 
 void test1(){
-    cout << "TEST 1 Pile and Queue";
+    cout << "\nTEST 1 Pile and Queue";
 
     PileP<int> p(10);
     p.insert(5);
@@ -86,9 +86,40 @@ void test3(){
     lista = 0;
 }
 
+void test4swap(){
+    cout << "\nSWAP TEST";
+    ListPointerT<int> lista(10);
+    lista.insert(0, 3);
+    lista.insert(1, 6);
+    lista.insert(2, 15);
+    lista.insert(3, 5);
+    lista.printList();
+    lista.swap(1,0);
+    lista.printList();
+}
+
+void test5reverse(){
+    cout << "\nPILE REVERSE TEST";
+    PileP<int> lista(10);
+    lista.insert(1);
+    lista.insert(2);
+    lista.insert(3);
+    lista.insert(4);
+    lista.insert(5);
+    lista.insert(6);
+    lista.insert(7);
+
+    lista.printList();
+    lista.reverse();
+    lista.printList();
+}
+
 int main(){
-    test1();
-    test2();
-    test3();
+    //test1();
+    //test2();
+    //test3();
+    //test4swap();
+    test5reverse();
+
     return 0;
 }
