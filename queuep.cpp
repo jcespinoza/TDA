@@ -4,7 +4,7 @@
 
 using namespace std;
 
-QueueP::QueueP(int size){
+QueueP::QueueP(int size=10):ListP(size){
     setSize(size);
 }
 

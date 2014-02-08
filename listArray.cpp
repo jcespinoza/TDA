@@ -56,18 +56,14 @@ int ListAr::next(int pos){
 }
 
 int ListAr::purge(){
-    cout << "\nPreparing to purge";
     int p = 0;
     int q;
     while( p < count -1 ){
         q = p + 1;
         while(q <= count-1){
-            cout << "\ncomparing " << get(p) << " and " << get(q);
             if(get(p) == get(q)){
-                cout << "\nThey were equal";
                 remove(q);
             }else{
-                cout << "\nAdvancing q";
                 q++;
             }
         }

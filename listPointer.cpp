@@ -4,16 +4,8 @@
 
 using namespace std;
 
-ListP::ListP(int size) {
+ListP::ListP(int size = 10) {
     this->size = size;
-    count = 0;
-    firstN = 0;
-    lastN = 0;
-}
-
-ListP::ListP() {
-    cout << "\nRan the parameterless one";
-    size = 10;
     count = 0;
     firstN = 0;
     lastN = 0;
@@ -98,7 +90,6 @@ int ListP::next(int pos){
 }
 
 int ListP::remove(int pos){
-    cout << "\nTrying to delete pos " << pos;
     if(pos < 0 || pos > count || pos > size)
         return -1;
     
@@ -145,12 +136,9 @@ int ListP::purge(){
     while( p < count -1 ){
         q = p + 1;
         while(q <= count-1){
-            cout << "\ncomparing " << get(p) << " and " << get(q);
             if(get(p) == get(q)){
-                cout << "\nThey were equal";
                 remove(q);
             }else{
-                cout << "\nAdvancing q";
                 q++;
             }
         }

@@ -15,6 +15,7 @@ public:
     int first();
     int last();
     int next(int);
+    int purge();
     int remove(int);
     int printList();
     int getCount(){return count;}

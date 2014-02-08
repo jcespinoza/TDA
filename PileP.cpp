@@ -1,7 +1,7 @@
 #include "PileP.h"
 using namespace std;
 
-PileP::PileP(int size){
+PileP::PileP(int size=10):ListP(size){
     setSize(size);
 }
 

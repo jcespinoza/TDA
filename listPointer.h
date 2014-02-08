@@ -12,7 +12,6 @@
 class ListP{
 public:
     ListP(int);
-    ListP();
     ~ListP();
     int insert(int,int);
     int first();
@@ -20,6 +19,7 @@ public:
     int next(int);
     int remove(int);
     int printList();
+    int purge();
     void setSize(int);
     int get(int);
     int getCount(){return count;}
