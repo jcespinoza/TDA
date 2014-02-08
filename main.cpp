@@ -14,28 +14,7 @@
 using namespace std;
 
 void test1(){
-    cout << "TEST 1";
-    ListP lista(5);
-    cout << "\ninsert " << lista.insert(0,5);
-    cout << "\ninsert " << lista.insert(1, 87);
-    cout << "\ninsert " << lista.insert(2, 54);
-    cout << "\ninsert " << lista.insert(0, 38);
-    cout << "\ninsert " << lista.insert(1, 15);
-
-    cout << "\nprim: " << lista.first();
-    cout << "\nfin: " << lista.last();
-    cout << "\nrec: " << lista.get(2);
-
-    lista.printList();
-    cout << "\nelim: " << lista.remove(2);
-    cout << "\nprim: " << lista.first();
-    cout << "\nfin: " << lista.last();
-
-    cout << "\n\nNext: " << lista.next(2);
-    cout << "\n";
-    lista.printList();
-    cout << "\n\n\n";
-    lista = 0;
+    cout << "TEST 1 Pile and Queue";
 
     PileP<int> p(10);
     p.insert(5);
@@ -46,7 +25,7 @@ void test1(){
     p.printList();
 
     cout << "\n\n";
-    QueueP q(10);
+    QueueP<int> q(10);
     q.insert(5);
     q.printList();
     q.insert(85);
@@ -56,7 +35,7 @@ void test1(){
 }
 
 void test2(){
-    cout << "\n\nTEST2";
+    cout << "\n\nTEST2 Pointers";
     ListPointerT<int> lista(5);
     cout << "\ninsert " << lista.insert(0,5);
     cout << "\ninsert " << lista.insert(1, 87);
@@ -80,9 +59,36 @@ void test2(){
     lista = 0;
 }
 
+void test3(){
+    cout << "\n\nTEST3 Array";
+    ListAr<int> lista(5);
+    cout << "Created the list";
+    cout << "\ninsert " << lista.insert(0,5);
+    cout << "\ninsert " << lista.insert(1, 87);
+    cout << "\ninsert " << lista.insert(2, 54);
+    cout << "\ninsert " << lista.insert(0, 38);
+    cout << "\ninsert " << lista.insert(1, 15);
+
+    cout << "\nprim: " << lista.first();
+    cout << "\nfin: " << lista.last();
+    cout << "\nrec: " << lista.get(2);
+
+    lista.printList();
+    cout << "\nelim: " << lista.remove(2);
+    cout << "\nprim: " << lista.first();
+    cout << "\nfin: " << lista.last();
+
+    cout << "\n\nNext: " << lista.next(2);
+    cout << "\n";
+    lista.printList();
+    cout << "\n\n\n";
+    cout << "Cleaning the list";
+    lista = 0;
+}
+
 int main() {
-    cout << "Compiled correctly :D\n";
-    test1();
-    test2();
+    //test1();
+    //test2();
+    test3();
     return 0;
 }

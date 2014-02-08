@@ -12,15 +12,15 @@
 template <class T>
 class PileP: public ListPointerT<T>{
 public:
-    PileP(int size=10):ListPointerT(size){}
+    PileP(int size=10):ListPointerT<T>(size){}
     ~PileP(){}
     int insert(T val){
-        return ListPointerT::insert(getCount(), val);
+        return ListPointerT<T>::insert(this->getCount(), val);
     }
 
     T take(){
-        T temp = get(getCount()-1);
-        remove(getCount()-1);
+        T temp = this->get(this->getCount()-1);
+        this->remove(this->getCount()-1);
         return temp;
     }
 

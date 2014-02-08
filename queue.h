@@ -4,16 +4,24 @@
  *
  * Created on February 3, 2014, 2:27 PM
  */
-#include "listPointer.h"
+#include "listpointert.h"
 
 #ifndef QUEUE_H
 #define	QUEUE_H
-class QueueP: public ListP{
+template <class T>
+class QueueP: public ListPointerT<T>{
 public:
-    QueueP(int);
-    int insert(int);
-    int take();
-    ~QueueP();
+    QueueP(int size):ListPointerT<T>(size){}
+    int insert(T val){
+        return ListPointerT<T>::insert(ListPointerT<T>::getCount(),val);
+    }
+    int take(){
+        T temp = this->first();
+        this->remove(0);
+        return temp;
+    }
+
+    ~QueueP(){}
 private:
     
 };
