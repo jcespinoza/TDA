@@ -12,15 +12,15 @@ using namespace std;
 
 template <class T>
 class ListAr{
+private:
+    int size;
+    int count;
+    int* elements;
 public:
     ListAr(int size = 10){
         this->size = size;
         elements = new int[size];
         count = 0;
-    }
-
-    ~ListAr(){
-
     }
 
     int insert(int pos, T value){
@@ -98,10 +98,10 @@ public:
         return elements[pos];
     }
 
-private:
-    int size;
-    int count;
-    int* elements;
+    ~ListAr(){
+        elements = nullptr;
+        delete elements;
+    }
 };
 
 

@@ -86,9 +86,9 @@ void test3(){
     lista = 0;
 }
 
-int main() {
-    //test1();
-    //test2();
+int main(){
+    test1();
+    test2();
     test3();
     return 0;
 }
