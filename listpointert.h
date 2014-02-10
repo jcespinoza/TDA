@@ -105,8 +105,26 @@ public:
     }
 
     int removeDuplicates(T val){
-        int p = 0;
-        while( p < count -1)
+        int p = getIndex(val);
+        int q  = p + 1;
+        if(p == -1)
+            return -1;
+
+        while(q <= count -1){
+            if(get(q) == val)
+                remove(q);
+            else
+                q++;
+        }
+        return 0;
+    }
+
+    int getIndex(T val){
+        for(int i = 0; i < count; i++){
+            if(get(i) == val)
+                return i;
+        }
+        return -1;
     }
 
     int remove(int pos){

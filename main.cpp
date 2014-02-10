@@ -105,12 +105,14 @@ void test5reverse(){
     lista.insert(2);
     lista.insert(3);
     lista.insert(4);
-    lista.insert(5);
+    lista.insert(3);
     lista.insert(6);
     lista.insert(7);
 
     lista.printList();
     lista.reverse();
+    lista.printList();
+    lista.removeDuplicates(3);
     lista.printList();
 }
 
