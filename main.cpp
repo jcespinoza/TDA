@@ -114,12 +114,32 @@ void test5reverse(){
     lista.printList();
 }
 
+void exercise1(){
+    cout << "\n\nEnter and expresion. NO spaces. One digit numbers only.\n";
+    const int MAX_LENGTH = 8;
+
+    PileP<char> expresionInfija(MAX_LENGTH);
+    char* input = new char[MAX_LENGTH];
+
+    cin.getline(input, MAX_LENGTH, '\n');
+    cout << "Taken " << input << " as the input";
+    char* cursor = input;
+
+    while(*cursor != '\0'){
+        expresionInfija.insert(*cursor);
+        cursor++;
+    }
+    expresionInfija.printList();
+    delete[] input;
+}
+
 int main(){
     //test1();
     //test2();
     //test3();
     //test4swap();
-    test5reverse();
+    //test5reverse();
+    exercise1();
 
     return 0;
 }

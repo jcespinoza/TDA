@@ -94,15 +94,19 @@ public:
         while( p < count -1 ){
             q = p + 1;
             while(q <= count-1){
-                if(get(p) == get(q)){
+                if(get(p) == get(q))
                     remove(q);
-                }else{
+                else
                     q++;
-                }
             }
             p++;
         }
         return 0;
+    }
+
+    int removeDuplicates(T val){
+        int p = 0;
+        while( p < count -1)
     }
 
     int remove(int pos){
