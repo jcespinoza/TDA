@@ -23,7 +23,8 @@ public:
         while(count > 0)
             remove(0);
         lastN = 0;
-        delete lastN;
+        if(lastN != 0)
+            delete lastN;
     }
     int insert(int pos, T val){
         if(pos < 0 || pos > count || pos > getSize() || count == getSize())
@@ -78,18 +79,18 @@ public:
     }
 
     int shuffleItems(){
-        srand(std::time(0));
         int currentR = 0;
         int x = 0;
         int y = getCount()-1;
         for(int i = 0; i < getCount(); i++){
             currentR = rand()%getCount();
-            cout << "\nRand: " << currentR;
             if(currentR%2 == 0){
                 x = currentR;
                 y = (x + 1);
             }
             swap(x,y);
+            x = i;
+            y = x + 1;
         }
         return 0;
     }
@@ -108,7 +109,7 @@ public:
 
     T next(int pos){
         NodeT<T>* cursor = goTo(pos+1);
-        return (cursor == 0)?-1:cursor->value;
+        return (cursor == 0)?0:cursor->value;
     }
 
     int purge(){
