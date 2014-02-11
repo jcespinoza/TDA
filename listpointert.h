@@ -97,13 +97,13 @@ public:
     T first(){
         if(firstN != NULL)
             return firstN->value;
-        return -1;
+        return 0;
     }
 
     T last(){
         if(lastN != 0)
             return lastN->value;
-        return -1;
+        return 0;
     }
 
     T next(int pos){
@@ -212,7 +212,7 @@ public:
 
     T get(int pos){
         if(pos < 0 || pos > count-1 || pos > size)
-            return -1;
+            return 0;
         NodeT<T>* cursor = firstN;
         for(int i = 0; i < pos; i++){
             cursor = cursor->next;
