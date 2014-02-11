@@ -114,6 +114,8 @@ void test5reverse(){
     lista.printList();
     lista.removeDuplicates(3);
     lista.printList();
+    lista.shuffleItems();
+    lista.printList();
 }
 
 void exercise1(){
@@ -132,7 +134,19 @@ void exercise1(){
         cursor++;
     }
     expresionInfija.printList();
+
+    int p = expresionInfija.getIndex('+');
+    if(p != -1){
+        char temp = expresionInfija.takeAt(p);
+        expresionInfija.insert(0, temp);
+    }
+    expresionInfija.removeDuplicates('+');
+    expresionInfija.printList();
     delete[] input;
+}
+
+void uniontest(){
+
 }
 
 int main(){
@@ -140,8 +154,9 @@ int main(){
     //test2();
     //test3();
     //test4swap();
-    //test5reverse();
-    exercise1();
+    test5reverse();
+    //exercise1();
+
 
     return 0;
 }

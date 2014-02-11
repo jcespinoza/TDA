@@ -2,6 +2,12 @@
 #define LISTPOINTERT_H
 
 #include "nodet.h"
+#include <iostream>
+#include <algorithm>
+#include <ctime>
+
+using namespace std;
+
 template <class T>
 class ListPointerT
 {
@@ -68,6 +74,23 @@ public:
         T second = get(j);
         goTo(i)->value = second;
         goTo(j)->value = first;
+        return 0;
+    }
+
+    int shuffleItems(){
+        srand(std::time(0));
+        int currentR = 0;
+        int x = 0;
+        int y = getCount()-1;
+        for(int i = 0; i < getCount(); i++){
+            currentR = rand()%getCount();
+            cout << "\nRand: " << currentR;
+            if(currentR%2 == 0){
+                x = currentR;
+                y = (x + 1);
+            }
+            swap(x,y);
+        }
         return 0;
     }
 
@@ -167,6 +190,7 @@ public:
             return 0;
         }
     }
+
 
     int printList(){
         cout << "\nLIST:";

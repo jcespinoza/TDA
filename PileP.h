@@ -17,10 +17,19 @@ public:
     int insert(T val){
         return ListPointerT<T>::insert(this->getCount(), val);
     }
+    int insert(int pos, T val){
+        return ListPointerT<T>::insert(pos,val);
+    }
 
     T take(){
         T temp = this->get(this->getCount()-1);
         this->remove(this->getCount()-1);
+        return temp;
+    }
+
+    T takeAt(int pos){
+        T temp = this->get(pos);
+        this->remove(pos);
         return temp;
     }
 
