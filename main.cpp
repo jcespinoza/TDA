@@ -145,8 +145,27 @@ void exercise1(){
     delete[] input;
 }
 
-void uniontest(){
-
+void discontest(){
+    PileP<int> lista(7);
+    lista.insert(1);
+    lista.insert(2);
+    lista.insert(3);
+    lista.insert(4);
+    lista.insert(5);
+    lista.insert(6);
+    lista.insert(7);
+    PileP<int> lista2(11);
+    lista2.insert(11);
+    //lista2.insert(22);
+    //lista2.insert(33);
+    //lista2.insert(44);
+    lista.printList();
+    lista2.printList();
+    lista2.append(lista.disconnect(4,3));
+    cout << "\nf: " << lista.first() << " l: " << lista.last();
+    lista.printList();
+    lista2.printList();
+    cout << "\nf: " << lista2.first() << " l: " << lista2.last();
 }
 
 int main(){
@@ -154,9 +173,9 @@ int main(){
     //test2();
     //test3();
     //test4swap();
-    test5reverse();
+    //test5reverse();
     //exercise1();
-
+    discontest();
 
     return 0;
 }

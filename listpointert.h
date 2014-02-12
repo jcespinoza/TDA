@@ -166,7 +166,7 @@ public:
 
         }else if(pos == count-1){
             NodeT<T>* target = firstN;
-            NodeT<T>* targPrev;
+            NodeT<T>* targPrev = 0;
 
             while(target-> next != 0){
                 targPrev = target;
@@ -234,9 +234,74 @@ public:
         return cursor;
     }
 
+    NodeT<T>* getFirst(){
+        return this->firstN;
+    }
+    NodeT<T>* getLast(){
+        return this->lastN;
+    }
+
+    void append(NodeT<T>* prime){
+        if(prime == 0)
+            return;
+        NodeT<T>* cursor = prime;
+        NodeT<T>* tempLast = lastN;
+        int hMany = 0;
+        while(cursor != 0){
+            hMany++;
+            tempLast = cursor;
+            cursor = cursor->next;
+        }
+        if(count == 0)
+            firstN = prime;
+        if(lastN != 0)
+            lastN->next = prime;
+        lastN = tempLast;
+        count += hMany;
+    }
+    NodeT<T>* disconnect(int from, int until){
+        if(count < 1 || from < 0 || until >= getCount() || from > until)
+            return 0;
+
+        NodeT<T>* pre = 0;
+        NodeT<T>* fst = 0;
+        NodeT<T>* lst = 0;
+        NodeT<T>* pos = 0;
+        int hMany = 1 + until - from;
+        if(from == 0){
+            fst = firstN;
+            lst = goTo(until);
+            firstN = lst->next;
+            lst->next = 0;
+            if(until == getCount()-1)
+                lastN == firstN;
+        }else if(from == getCount()-1){
+
+            fst = goTo(from);
+            lst = goTo(until);
+            pre = goTo(from -1);
+            if(pre != 0)
+                pre->next = lst->next;
+            lst->next = 0;
+        }else{
+            pre = goTo(from -1);
+            fst = goTo(from);
+            lst = goTo(until);
+            pos = goTo(until+1);
+            pre->next = pos;
+            lst->next = 0;
+        }
+        count -= hMany;
+        if(count == 0)
+            firstN = lastN = 0;
+        cout << "\ndone";
+        return fst;
+    }
+
 private:
     int size;
     int count;
+protected:
     NodeT<T>* firstN;
     NodeT<T>* lastN;
 };
