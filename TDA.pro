@@ -15,5 +15,6 @@ HEADERS += \
     node.h \
     nodet.h \
     nodet2.h \
-    listp2.h
+    listp2.h \
+    listT.h
 

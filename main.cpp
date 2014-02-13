@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   main.cpp
  * Author: jaycespinoza
  *
@@ -10,6 +10,7 @@
 #include "PileP.h"
 #include "queue.h"
 #include "listpointert.h"
+#include "listT.h"
 
 using namespace std;
 
@@ -155,17 +156,71 @@ void discontest(){
     lista.insert(6);
     lista.insert(7);
     PileP<int> lista2(11);
-    lista2.insert(11);
+    //lista2.insert(11);
     //lista2.insert(22);
     //lista2.insert(33);
     //lista2.insert(44);
     lista.printList();
     lista2.printList();
-    lista2.append(lista.disconnect(4,3));
+    lista2.append(lista.disconnectLast());
     cout << "\nf: " << lista.first() << " l: " << lista.last();
     lista.printList();
     lista2.printList();
     cout << "\nf: " << lista2.first() << " l: " << lista2.last();
+}
+
+void test6(){
+    ListT<int> lista;
+    lista.insert(1);
+    lista.insert(2);
+    lista.insert(3);
+    lista.insert(4);
+    lista.insert(5);
+    lista.insert(3);
+    lista.insert(7);
+    lista.printList();
+    lista.insert(6, 54);
+    lista.printList();
+    cout << "\nel " << lista.get(9);
+    cout << "\nindexOF: " << lista.getIndex(65);
+    lista.swap(5,4);
+    lista.printList();
+    lista.remove(7);
+    lista.remove(6);
+    lista.printList();
+    cout << "\nLast " << lista.last()->value;
+    cout << "\nLast: " << lista.get(5);
+    lista.shuffleItems();
+    lista.printList();
+    lista.purge();
+    lista.printList();
+    lista.insert(1);
+    lista.printList();
+    lista.removeDuplicates(1);
+    lista.printList();
+    cout << "\n\n";
+    cout << "\nDisconnected " << lista.disconnect(1)->value;
+    lista.printList();
+    cout << "\nDisconnenting";
+    lista.disconnectFrom(3);
+    lista.printList();
+    cout << "\nDisconnenting Last:";
+    lista.disconnectLast();
+    lista.printList();
+    cout << "\n\nAppend TEsting";
+    ListT<int> ele2;
+    ele2.insert(45);
+    ele2.insert(66);
+    ele2.insert(87);
+    ele2.insert(23);
+    ele2.insert(36);
+    NodeT<int>* elems = ele2.disconnectFrom(2);
+    lista.append(elems);
+    lista.printList();
+    lista.release();
+    lista.printList();
+
+    //lista.printList();
 }
 
 int main(){
@@ -175,7 +230,7 @@ int main(){
     //test4swap();
     //test5reverse();
     //exercise1();
-    discontest();
+    test6();
 
     return 0;
 }

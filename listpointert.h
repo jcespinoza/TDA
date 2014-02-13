@@ -242,8 +242,10 @@ public:
     }
 
     void append(NodeT<T>* prime){
+        cout << "\nOK into append";
         if(prime == 0)
             return;
+        cout << "\nprime was not null";
         NodeT<T>* cursor = prime;
         NodeT<T>* tempLast = lastN;
         int hMany = 0;
@@ -259,10 +261,11 @@ public:
         lastN = tempLast;
         count += hMany;
     }
+
     NodeT<T>* disconnect(int from, int until){
         if(count < 1 || from < 0 || until >= getCount() || from > until)
             return 0;
-
+        cout << "\nWas right";
         NodeT<T>* pre = 0;
         NodeT<T>* fst = 0;
         NodeT<T>* lst = 0;
@@ -275,14 +278,15 @@ public:
             lst->next = 0;
             if(until == getCount()-1)
                 lastN == firstN;
-        }else if(from == getCount()-1){
 
-            fst = goTo(from);
-            lst = goTo(until);
-            pre = goTo(from -1);
-            if(pre != 0)
-                pre->next = lst->next;
-            lst->next = 0;
+        }else if(from == getCount()-1){
+            if(until == from){
+                pre = goTo(from -1);
+                if(pre != 0)
+                    pre->next = 0;
+                fst = goTo(from);
+                lastN = pre;
+            }
         }else{
             pre = goTo(from -1);
             fst = goTo(from);
@@ -294,8 +298,22 @@ public:
         count -= hMany;
         if(count == 0)
             firstN = lastN = 0;
-        cout << "\ndone";
         return fst;
+    }
+
+    NodeT<T>* disconnectLast(){
+        NodeT<T>* ret = 0;
+        if(count == 1)
+            return 0;
+        NodeT<T>* cursor = firstN;
+        while(cursor != 0){
+            ret = cursor->next;
+            cursor = cursor->next;
+        }
+        cursor->next = 0;
+        lastN = cursor;
+        count--;
+        return ret;
     }
 
 private:
