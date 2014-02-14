@@ -3,6 +3,7 @@
 
 #include "nodet.h"
 #include <iostream>
+#include <QDebug>
 #include <algorithm>
 #include <ctime>
 
@@ -27,8 +28,8 @@ public:
     }
 
     void insert(T val){
-        if(!isValid(val))
-            return;
+        //if(!isValid(val))
+          //  return;
         NodeT<T>* newone = new NodeT<T>();
         newone->value = val;
         newone->next = 0;
@@ -43,6 +44,7 @@ public:
             cursor->next = newone;
             count++;
         }
+        qDebug() << "\nEverything right";
     }
 
     virtual bool isValid(T val){
@@ -65,8 +67,8 @@ public:
     }
 
     void insert(int pos, T val){
-        if(!isValid(val))
-            return;
+        //if(!isValid(val))
+          //  return;
 
         NodeT<T>* newone = new NodeT<T>();
         newone->value = val;
