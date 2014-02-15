@@ -230,7 +230,11 @@ void treeTest(){
     tree.insert(75);
     tree.printValues();
     tree.insert(25);
+    tree.insert(15);
     tree.insert(89);
+    tree.insert(89);
+    tree.insert(24);
+    tree.insert(2);
 
     tree.printValues();
 }

@@ -11,7 +11,8 @@ public:
     TreeT();
 
     void insert(T val);
-    //void removeNode(NodeTree<T>* root, NodeTree<T>* target);
+    void removeNode(NodeTree<T> *&root, T val);
+    void remove(T val);
     void printValues();
     void printNodes(NodeTree<T>*);
     void insertNode(NodeTree<T>* &root, T val);

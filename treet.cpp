@@ -16,7 +16,7 @@ void TreeT<T>::insertNode(NodeTree<T>* &root, T val)
         root->value = val;
     }else if(val < root->value){
         insertNode(root->lSon, val);
-    }else{
+    }else if(val > root->value){
         insertNode(root->rSon, val);
     }
 }
@@ -25,6 +25,22 @@ template <class T>
 void TreeT<T>::insert(T val)
 {
     insertNode(mainRoot, val);
+}
+
+template <class T>
+void TreeT<T>::removeNode(NodeTree<T> * &root, T val)
+{
+    if(root == 0)
+        return;
+    if(root->value == val)
+        root = 0;
+
+}
+
+template <class T>
+void TreeT<T>::remove(T val)
+{
+    removeNode(mainRoot, val);
 }
 
 template <class T>
