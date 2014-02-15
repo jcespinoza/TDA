@@ -4,7 +4,8 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += main.cpp \
-    listPointer.cpp
+    listPointer.cpp \
+    treet.cpp
 
 HEADERS += \
     listArray.h \
@@ -16,5 +17,7 @@ HEADERS += \
     nodet.h \
     nodet2.h \
     listp2.h \
-    listT.h
+    listT.h \
+    treet.h \
+    nodetree.h
 

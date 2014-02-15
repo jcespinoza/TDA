@@ -11,163 +11,164 @@
 #include "queue.h"
 #include "listpointert.h"
 #include "listT.h"
+#include "treet.cpp"
 
 using namespace std;
 
-void test1(){
-    cout << "\nTEST 1 Pile and Queue";
+//void test1(){
+//    cout << "\nTEST 1 Pile and Queue";
 
-    PileP<int> p(10);
-    p.insert(5);
-    p.printList();
-    p.insert(85);
-    p.printList();
-    p.take();
-    p.printList();
+//    PileP<int> p(10);
+//    p.insert(5);
+//    p.printList();
+//    p.insert(85);
+//    p.printList();
+//    p.take();
+//    p.printList();
 
-    cout << "\n\n";
-    QueueP<int> q(10);
-    q.insert(5);
-    q.printList();
-    q.insert(85);
-    q.printList();
-    q.take();
-    q.printList();
-}
+//    cout << "\n\n";
+//    QueueP<int> q(10);
+//    q.insert(5);
+//    q.printList();
+//    q.insert(85);
+//    q.printList();
+//    q.take();
+//    q.printList();
+//}
 
-void test2(){
-    cout << "\n\nTEST2 Pointers";
-    ListPointerT<int> lista(5);
-    cout << "\ninsert " << lista.insert(0,5);
-    cout << "\ninsert " << lista.insert(1, 87);
-    cout << "\ninsert " << lista.insert(2, 54);
-    cout << "\ninsert " << lista.insert(0, 38);
-    cout << "\ninsert " << lista.insert(1, 15);
+//void test2(){
+//    cout << "\n\nTEST2 Pointers";
+//    ListPointerT<int> lista(5);
+//    cout << "\ninsert " << lista.insert(0,5);
+//    cout << "\ninsert " << lista.insert(1, 87);
+//    cout << "\ninsert " << lista.insert(2, 54);
+//    cout << "\ninsert " << lista.insert(0, 38);
+//    cout << "\ninsert " << lista.insert(1, 15);
 
-    cout << "\nprim: " << lista.first();
-    cout << "\nfin: " << lista.last();
-    cout << "\nrec: " << lista.get(2);
+//    cout << "\nprim: " << lista.first();
+//    cout << "\nfin: " << lista.last();
+//    cout << "\nrec: " << lista.get(2);
 
-    lista.printList();
-    cout << "\nelim: " << lista.remove(2);
-    cout << "\nprim: " << lista.first();
-    cout << "\nfin: " << lista.last();
+//    lista.printList();
+//    cout << "\nelim: " << lista.remove(2);
+//    cout << "\nprim: " << lista.first();
+//    cout << "\nfin: " << lista.last();
 
-    cout << "\n\nNext: " << lista.next(2);
-    cout << "\n";
-    lista.printList();
-    cout << "\n\n\n";
-    lista = 0;
-}
+//    cout << "\n\nNext: " << lista.next(2);
+//    cout << "\n";
+//    lista.printList();
+//    cout << "\n\n\n";
+//    lista = 0;
+//}
 
-void test3(){
-    cout << "\n\nTEST3 Array";
-    ListAr<int> lista(5);
-    cout << "Created the list";
-    cout << "\ninsert " << lista.insert(0,5);
-    cout << "\ninsert " << lista.insert(1, 87);
-    cout << "\ninsert " << lista.insert(2, 54);
-    cout << "\ninsert " << lista.insert(0, 38);
-    cout << "\ninsert " << lista.insert(1, 15);
+//void test3(){
+//    cout << "\n\nTEST3 Array";
+//    ListAr<int> lista(5);
+//    cout << "Created the list";
+//    cout << "\ninsert " << lista.insert(0,5);
+//    cout << "\ninsert " << lista.insert(1, 87);
+//    cout << "\ninsert " << lista.insert(2, 54);
+//    cout << "\ninsert " << lista.insert(0, 38);
+//    cout << "\ninsert " << lista.insert(1, 15);
 
-    cout << "\nprim: " << lista.first();
-    cout << "\nfin: " << lista.last();
-    cout << "\nrec: " << lista.get(2);
+//    cout << "\nprim: " << lista.first();
+//    cout << "\nfin: " << lista.last();
+//    cout << "\nrec: " << lista.get(2);
 
-    lista.printList();
-    cout << "\nelim: " << lista.remove(2);
-    cout << "\nprim: " << lista.first();
-    cout << "\nfin: " << lista.last();
+//    lista.printList();
+//    cout << "\nelim: " << lista.remove(2);
+//    cout << "\nprim: " << lista.first();
+//    cout << "\nfin: " << lista.last();
 
-    cout << "\n\nNext: " << lista.next(2);
-    cout << "\n";
-    lista.printList();
-    cout << "\n\n\n";
-    cout << "Cleaning the list";
-    lista = 0;
-}
+//    cout << "\n\nNext: " << lista.next(2);
+//    cout << "\n";
+//    lista.printList();
+//    cout << "\n\n\n";
+//    cout << "Cleaning the list";
+//    lista = 0;
+//}
 
-void test4swap(){
-    cout << "\nSWAP TEST";
-    ListPointerT<int> lista(10);
-    lista.insert(0, 3);
-    lista.insert(1, 6);
-    lista.insert(2, 15);
-    lista.insert(3, 5);
-    lista.printList();
-    lista.swap(1,0);
-    lista.printList();
-}
+//void test4swap(){
+//    cout << "\nSWAP TEST";
+//    ListPointerT<int> lista(10);
+//    lista.insert(0, 3);
+//    lista.insert(1, 6);
+//    lista.insert(2, 15);
+//    lista.insert(3, 5);
+//    lista.printList();
+//    lista.swap(1,0);
+//    lista.printList();
+//}
 
-void test5reverse(){
-    cout << "\nPILE REVERSE TEST";
-    PileP<int> lista(10);
-    lista.insert(1);
-    lista.insert(2);
-    lista.insert(3);
-    lista.insert(4);
-    lista.insert(3);
-    lista.insert(6);
-    lista.insert(7);
+//void test5reverse(){
+//    cout << "\nPILE REVERSE TEST";
+//    PileP<int> lista(10);
+//    lista.insert(1);
+//    lista.insert(2);
+//    lista.insert(3);
+//    lista.insert(4);
+//    lista.insert(3);
+//    lista.insert(6);
+//    lista.insert(7);
 
-    lista.printList();
-    lista.reverse();
-    lista.printList();
-    lista.removeDuplicates(3);
-    lista.printList();
-    lista.shuffleItems();
-    lista.printList();
-}
+//    lista.printList();
+//    lista.reverse();
+//    lista.printList();
+//    lista.removeDuplicates(3);
+//    lista.printList();
+//    lista.shuffleItems();
+//    lista.printList();
+//}
 
-void exercise1(){
-    cout << "\n\nEnter and expresion. NO spaces. One digit numbers only.\n";
-    const int MAX_LENGTH = 8;
+//void exercise1(){
+//    cout << "\n\nEnter and expresion. NO spaces. One digit numbers only.\n";
+//    const int MAX_LENGTH = 8;
 
-    PileP<char> expresionInfija(MAX_LENGTH);
-    char* input = new char[MAX_LENGTH];
+//    PileP<char> expresionInfija(MAX_LENGTH);
+//    char* input = new char[MAX_LENGTH];
 
-    cin.getline(input, MAX_LENGTH, '\n');
-    cout << "Taken " << input << " as the input";
-    char* cursor = input;
+//    cin.getline(input, MAX_LENGTH, '\n');
+//    cout << "Taken " << input << " as the input";
+//    char* cursor = input;
 
-    while(*cursor != '\0'){
-        expresionInfija.insert(*cursor);
-        cursor++;
-    }
-    expresionInfija.printList();
+//    while(*cursor != '\0'){
+//        expresionInfija.insert(*cursor);
+//        cursor++;
+//    }
+//    expresionInfija.printList();
 
-    int p = expresionInfija.getIndex('+');
-    if(p != -1){
-        char temp = expresionInfija.takeAt(p);
-        expresionInfija.insert(0, temp);
-    }
-    expresionInfija.removeDuplicates('+');
-    expresionInfija.printList();
-    delete[] input;
-}
+//    int p = expresionInfija.getIndex('+');
+//    if(p != -1){
+//        char temp = expresionInfija.takeAt(p);
+//        expresionInfija.insert(0, temp);
+//    }
+//    expresionInfija.removeDuplicates('+');
+//    expresionInfija.printList();
+//    delete[] input;
+//}
 
-void discontest(){
-    PileP<int> lista(7);
-    lista.insert(1);
-    lista.insert(2);
-    lista.insert(3);
-    lista.insert(4);
-    lista.insert(5);
-    lista.insert(6);
-    lista.insert(7);
-    PileP<int> lista2(11);
-    //lista2.insert(11);
-    //lista2.insert(22);
-    //lista2.insert(33);
-    //lista2.insert(44);
-    lista.printList();
-    lista2.printList();
-    lista2.append(lista.disconnectLast());
-    cout << "\nf: " << lista.first() << " l: " << lista.last();
-    lista.printList();
-    lista2.printList();
-    cout << "\nf: " << lista2.first() << " l: " << lista2.last();
-}
+//void discontest(){
+//    PileP<int> lista(7);
+//    lista.insert(1);
+//    lista.insert(2);
+//    lista.insert(3);
+//    lista.insert(4);
+//    lista.insert(5);
+//    lista.insert(6);
+//    lista.insert(7);
+//    PileP<int> lista2(11);
+//    //lista2.insert(11);
+//    //lista2.insert(22);
+//    //lista2.insert(33);
+//    //lista2.insert(44);
+//    lista.printList();
+//    lista2.printList();
+//    lista2.append(lista.disconnectLast());
+//    cout << "\nf: " << lista.first() << " l: " << lista.last();
+//    lista.printList();
+//    lista2.printList();
+//    cout << "\nf: " << lista2.first() << " l: " << lista2.last();
+//}
 
 void test6(){
     ListT<int> lista;
@@ -223,6 +224,17 @@ void test6(){
     //lista.printList();
 }
 
+void treeTest(){
+    cout << "\TREE TEST";
+    TreeT<int> tree;
+    tree.insert(75);
+    tree.printValues();
+    tree.insert(25);
+    tree.insert(89);
+
+    tree.printValues();
+}
+
 int main(){
     //test1();
     //test2();
@@ -230,7 +242,8 @@ int main(){
     //test4swap();
     //test5reverse();
     //exercise1();
-    test6();
+    //test6();
+    treeTest();
 
     return 0;
 }

@@ -3,7 +3,6 @@
 
 #include "nodet.h"
 #include <iostream>
-#include <QDebug>
 #include <algorithm>
 #include <ctime>
 
@@ -44,7 +43,6 @@ public:
             cursor->next = newone;
             count++;
         }
-        qDebug() << "\nEverything right";
     }
 
     virtual bool isValid(T val){
