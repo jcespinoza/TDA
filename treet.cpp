@@ -32,9 +32,12 @@ void TreeT<T>::removeNode(NodeTree<T> * &root, T val)
 {
     if(root == 0)
         return;
-    if(root->value == val)
+    if(root->value == val){
         root = 0;
-
+        return;
+    }
+    removeNode((root->lSon), val);
+    removeNode((root->rSon), val);
 }
 
 template <class T>

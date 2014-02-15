@@ -225,7 +225,7 @@ void test6(){
 }
 
 void treeTest(){
-    cout << "\TREE TEST";
+    cout << "\nTREE TEST";
     TreeT<int> tree;
     tree.insert(75);
     tree.printValues();
@@ -235,7 +235,8 @@ void treeTest(){
     tree.insert(89);
     tree.insert(24);
     tree.insert(2);
-
+    tree.printValues();
+    tree.remove(15);
     tree.printValues();
 }
 
