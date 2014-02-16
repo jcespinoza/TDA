@@ -3,6 +3,7 @@
 
 #include "nodet.h"
 #include <iostream>
+#include <QDebug>
 #include <algorithm>
 #include <ctime>
 
@@ -16,7 +17,7 @@ public:
     NodeT<T>* firstN;
     NodeT<T>* lastN;
 
-    ListPointerT(int i = 0){
+    ListPointerT(){
         count = 0;
         firstN = 0;
         lastN = 0;
@@ -43,10 +44,6 @@ public:
             cursor->next = newone;
             count++;
         }
-    }
-
-    virtual bool isValid(T val){
-        return true;
     }
 
     void release(){
@@ -101,7 +98,6 @@ public:
             target = goTo(pos);
             previo->next = target->next;
         }
-        cout << "\nDeleted " << target->value;
         delete target;
         count--;
     }
@@ -118,8 +114,8 @@ public:
             target = goTo(pos);
             previo->next = target->next;
         }
-        return target;
         count--;
+        return target;
     }
 
     NodeT<T>* disconnectFrom(int pos){
@@ -133,7 +129,9 @@ public:
             lastN = 0;
         }else{
             target = goTo(pos);
-            goTo(pos-1)->next = 0;
+            NodeT<T>* prev = goTo(pos-1);
+            if(prev != 0)
+                prev->next = 0;
         }
         updateCount();
         return target;
@@ -244,6 +242,31 @@ public:
         return -1;
     }
 
+    NodeT<T>* getPointer(T val){
+        NodeT<T>* cursor = firstN;
+        while(cursor != 0){
+            if(cursor->value == val)
+                break;
+            cursor = cursor->next;
+        }
+        return cursor;
+    }
+
+    bool isEmpty(){
+        return getCount() == 0 || firstN == 0;
+    }
+
+    T getLast(){
+        if(last() == 0)
+            return T();
+        return lastN->value;
+    }
+
+    T getFirst(){
+        if(firstN == 0)
+            return T();
+        return firstN->value;
+    }
 
     void swap(int i, int j){
         if( i < 0 || j < 0 || i >= count || j >= count)
