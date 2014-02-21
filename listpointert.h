@@ -5,7 +5,6 @@
 #include <iostream>
 #include <QDebug>
 #include <algorithm>
-#include <ctime>
 
 using namespace std;
 
