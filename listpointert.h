@@ -3,7 +3,7 @@
 
 #include "nodet.h"
 #include <iostream>
-#include <QDebug>
+//#include <QDebug>
 #include <algorithm>
 
 using namespace std;
@@ -221,6 +221,10 @@ public:
         return 0;
     }
 
+    T nextValue(int pos){
+        return goTo(pos + 1);
+    }
+
     T get(int pos){
         NodeT<T>* cursor = goTo(pos);
         if(cursor == 0)
@@ -239,6 +243,10 @@ public:
             cursor = cursor->next;
         }
         return -1;
+    }
+
+    bool exists(T val){
+        return getIndex(val) != -1;
     }
 
     NodeT<T>* getPointer(T val){

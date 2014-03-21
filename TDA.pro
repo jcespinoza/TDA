@@ -5,7 +5,8 @@ CONFIG -= qt
 
 SOURCES += main.cpp \
     listPointer.cpp \
-    treet.cpp
+    treet.cpp \
+    avl.cpp
 
 HEADERS += \
     listArray.h \
@@ -19,5 +20,6 @@ HEADERS += \
     listp2.h \
     listT.h \
     treet.h \
-    nodetree.h
+    nodetree.h \
+    avl.h
 

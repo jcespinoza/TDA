@@ -7,11 +7,12 @@
 
 #include <iostream>
 #include "listArray.h"
-#include "PileP.h"
-#include "queue.h"
-#include "listpointert.h"
+//#include "PileP.h"
+//#include "queue.h"
+//#include "listpointert.h"
 #include "listT.h"
 #include "treet.cpp"
+#include "avl.cpp"
 
 using namespace std;
 
@@ -170,7 +171,7 @@ using namespace std;
 //    cout << "\nf: " << lista2.first() << " l: " << lista2.last();
 //}
 
-void test6(){
+/*void test6(){
     ListT<int> lista;
     lista.insert(1);
     lista.insert(2);
@@ -238,6 +239,23 @@ void treeTest(){
     tree.printValues();
     tree.remove(15);
     tree.printValues();
+}*/
+
+void avlTest(){
+    AVL<int> avl;
+    avl.insert(5);
+    avl.insert(3);
+    avl.insert(2);
+    avl.insert(4);
+    avl.insert(8);
+    avl.insert(6);
+    avl.insert(11);
+    avl.insert(9);
+    avl.insert(7);
+    avl.insert(13);
+    avl.printTree();
+    avl.insert(10);
+    avl.printTree();
 }
 
 int main(){
@@ -248,7 +266,8 @@ int main(){
     //test5reverse();
     //exercise1();
     //test6();
-    treeTest();
+    //treeTest();
+    avlTest();
 
     return 0;
 }
