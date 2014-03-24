@@ -117,6 +117,12 @@ public:
         return target;
     }
 
+    NodeT<T>* disconnect(T val){
+        int index = getIndex(val);
+        return disconnect(index);
+    }
+
+
     NodeT<T>* disconnectFrom(int pos){
         if(pos < 0 || pos >= count || firstN == 0)
             return 0;
